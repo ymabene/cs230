@@ -5,11 +5,11 @@ from types import SimpleNamespace
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 
-
-
 from tqdm import tqdm
 
 from pretraining_scripts import *
+
+# Using CS224N final project config as reference
 
 
 
