@@ -8,6 +8,9 @@ import pandas
 from chainer_chemistry.dataset.parsers.csv_file_parser import CSVFileParser
 from chainer_chemistry.dataset.preprocessors.atomic_number_preprocessor import AtomicNumberPreprocessor  # NOQA
 
+
+## Taken from Git Repo
+
 download_url = 'https://raw.githubusercontent.com/aspuru-guzik-group/chemical_vae/master/models/zinc_properties/250k_rndm_zinc_drugs_clean_3.csv'  # NOQA
 file_name_250k = 'zinc250k.csv'
 
