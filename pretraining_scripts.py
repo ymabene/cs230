@@ -105,7 +105,7 @@ def load_model(model, optimizer, filepath):
 
 
 
-def model_eval(dataloader, model, device, args):
+def model_evaluate(dataloader, model, device, args):
     model.eval() 
 
     val_loss = 0
@@ -350,7 +350,7 @@ def train(args, config):
         train_sas_loss = train_sas_loss / (num_batches)
 
     
-        dev_loss, dev_ce_loss, dev_logp_loss, dev_qed_loss, dev_sas_loss = model_eval(dev_dataloader, model, device, args)
+        dev_loss, dev_ce_loss, dev_logp_loss, dev_qed_loss, dev_sas_loss = model_evaluate(dev_dataloader, model, device, args)
 
         if dev_loss < best_dev_loss:
             best_dev_loss = dev_loss
