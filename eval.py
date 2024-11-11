@@ -70,8 +70,6 @@ if __name__ == "__main__":
         max_seq_len = args.max_seq_len,
         vocab_size = args.vocab_size
 
-        #dev_out = 'predictions/' + args.option + '-sst-dev-out.csv',
-        #test_out = 'predictions/' + args.option + '-sst-test-out.csv'
     )
 
 
