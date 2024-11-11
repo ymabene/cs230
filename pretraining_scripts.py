@@ -76,7 +76,7 @@ class SmilesDataset(Dataset):
 
 
 def save_model(model, optimizer, args, config, filepath):
-    # CS224N Project spec
+    # Taken from CS224N Project spec
     save_info = {
         'model': model.state_dict(),
         'optim': optimizer.state_dict(),
@@ -93,15 +93,15 @@ def save_model(model, optimizer, args, config, filepath):
 
 
 def load_model(model, optimizer, filepath):
-    # Load the saved state dictionary
-    checkpoint = torch.load(filepath)
     
-    # Load the model and optimizer state dictionaries
+    checkpoint = torch.load(filepath)
     model.load_state_dict(checkpoint['model'])
     optimizer.load_state_dict(checkpoint['optim'])
 
+    return model,optimizer
+
+
  
-    return model, optimizer
 
 
 
