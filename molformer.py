@@ -267,6 +267,7 @@ class MolformerModel(nn.Module):
 
         hidden_state = self.norm(hidden_state) # bs, seq_len, dim
 
+        
         output = self.output_layer(hidden_state).float() # bs, seq_len, vocab size
 
         SAS = self.SAS_head(hidden_state.mean(dim=1))  # bs,vocab_dim -> bs
