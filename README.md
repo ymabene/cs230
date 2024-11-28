@@ -14,6 +14,10 @@ Training and evaluation scripts are in the following files:
 
 **bio_eval.py**
 
+**pretraining_scripts.py**
+
+**finetune_script.py**
+
 Data processing scripts are in the following files:
 
 **bio_data_processing.ipynb**
@@ -21,6 +25,9 @@ Data processing scripts are in the following files:
 **biological_data_preprocessing.py**
 
 **zinc.py**
+
+
+Inference for baseline Molformer model is found in **inference.ipynb**
 
 **gene_drug_chembl_ids.py**
 
