@@ -1,4 +1,4 @@
-Repository for the Molformer Model
+**Repository for the Molformer Model**
 
 Molformer model using chemical property data is found in molformer.py
 Molformer model using chemical property data and biological data is found in biomolformer.py
