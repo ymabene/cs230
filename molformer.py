@@ -3,6 +3,7 @@ import torch.nn as nn
 from torch.optim import Adam
 import math
 import torch.nn.functional as F
+import random
 
 
 class Attention(nn.Module):
@@ -213,6 +214,7 @@ class MolformerModel(nn.Module):
         self.SAS_head = SASMLP(hidden_dim=128)
         self.logp_head = logpMLP(hidden_dim=128)
         self.QED_head = QEDMLP(hidden_dim=128)
+        self.mask = config.mask
 
 
         self.layers = torch.nn.ModuleList()
@@ -250,11 +252,16 @@ class MolformerModel(nn.Module):
 
         device = input_id.device
 
+       
         bs, seq_len = input_id.shape
 
         mask = self.make_attention_masks(input_id, device, pad_indx)
 
         hidden_state = self.embeddings(input_id) # (bs, seq_len, dim)
+
+        if self.mask == True:
+            random_index = random.randint(0,seq_len-1)
+            hidden_state[:,random_index,:] = self.embeddings.weight[1] # randomly mask character
 
     
         # Add pos embeddings 
@@ -275,6 +282,6 @@ class MolformerModel(nn.Module):
         logp = self.logp_head(hidden_state.mean(dim=1))
 
     
-        return output, logp, QED, SAS    
+        return output, logp, QED, SAS, hidden_state   
 
 
