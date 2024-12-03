@@ -37,13 +37,13 @@ def get_args():
     parser.add_argument("--phi", help = "scaling factor for logp loss",type=float, default=1) 
     parser.add_argument("--theta", help = "scaling factor for expression losses",type=float, default=3)
     parser.add_argument("--beta", help = "scaling factor for cross entropy loss",type=float, default=0.3)
-    parser.add_argument("--filepath_mod", help = "path to save model checkpoints",type=str, default='outputs/masking/bio_model_finetuned.pt')
-    parser.add_argument("--filepath_losses", help = "path to save model losses",type=str, default='outputs/masking/bio_model_finetuned_losses.csv')
-    parser.add_argument("--saved_model_filepath", help = "path to saved backbone model",type=str, default='outputs/masking/bio_model_backbone_finetuned.pt')
-    parser.add_argument("--filepath_inference", help = "path to save model outputs",type=str, default='outputs/masking/bio_inference.csv')
+    parser.add_argument("--filepath_mod", help = "path to save model checkpoints",type=str, default='outputs/bio_1e-5/bio_model_finetuned.pt')
+    parser.add_argument("--filepath_losses", help = "path to save model losses",type=str, default='outputs/bio_1e-5/bio_model_finetuned_losses.csv')
+    parser.add_argument("--saved_model_filepath", help = "path to saved backbone model",type=str, default='outputs/bio_1e-5/bio_model_backbone_finetuned.pt')
+    parser.add_argument("--filepath_inference", help = "path to save model outputs",type=str, default='outputs/bio_1e-5/bio_inference.csv')
     parser.add_argument("--mutation_vocab_size", help = "vocab size for gene mutations",type=int, default=7)
-    parser.add_argument("--saved_bio_model_filepath", help = "path to save bio model checkpoints",type=str, default='outputs/masking/bio_model_finetuned.pt')
-    parser.add_argument("--mask", help = "whether or not to conduct masking of input during training",type=bool, default=True)
+    parser.add_argument("--saved_bio_model_filepath", help = "path to save bio model checkpoints",type=str, default='outputs/bio_1e-5/bio_model_finetuned.pt')
+    parser.add_argument("--mask", help = "whether or not to conduct masking of input during training",type=bool, default=False)
     
 
     args = parser.parse_args()
@@ -70,7 +70,8 @@ if __name__ == "__main__":
         dim = args.dim,
         max_seq_len = args.max_seq_len,
         vocab_size = args.vocab_size,
-        mutation_vocab_size = args.mutation_vocab_size
+        mutation_vocab_size = args.mutation_vocab_size,
+        mask = args.mask
     )
 
 

@@ -33,13 +33,16 @@ def get_args():
     parser.add_argument("--num_layers", type=int, default=4)
     parser.add_argument("--dim", type=int, default=256)
     parser.add_argument("--max_seq_len", type=int, default=80)
-    parser.add_argument("--gamma", help = "scaling factor for QED loss",type=float, default=1) #12
-    parser.add_argument("--delta", help = "scaling factor for SAS loss",type=float, default=1) # 3
-    parser.add_argument("--phi", help = "scaling factor for logp loss",type=float, default=1) # 3
+    parser.add_argument("--gamma", help = "scaling factor for QED loss",type=float, default=12) #12
+    parser.add_argument("--delta", help = "scaling factor for SAS loss",type=float, default=3) # 3
+    parser.add_argument("--phi", help = "scaling factor for logp loss",type=float, default=3) # 3
     parser.add_argument("--beta", help = "scaling factor for cross entropy loss",type=float, default=1)
-    parser.add_argument("--filepath_mod", help = "path to save model checkpoints",type=str, default='outputs/zinc_pretrained_111.pt')
-    parser.add_argument("--filepath_losses", help = "path to save model losses",type=str, default='outputs/zinc_pretrained_loss_111.csv')
+    parser.add_argument("--filepath_inference", help = "path to save model outputs",type=str, default='outputs/zinc_pretrained_111.pt')
+    parser.add_argument("--saved_model_filepath", help = "path to saved model ",type=str, default='outputs/zinc_pretrained_loss_111.csv')
 
+    parser.add_argument("--filepath_inference", help = "path to save model outputs",type=str, default='outputs/equal_scaling/zinc_pretrained_inference_111.csv')
+    parser.add_argument("--saved_model_filepath", help = "path to saved model",type=str, default='outputs\zinc_pretrained_111.pt')
+ 
 
 
     args = parser.parse_args()

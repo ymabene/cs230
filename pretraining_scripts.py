@@ -218,7 +218,7 @@ def evaluate(args, config):
         b_sas = b_sas.to(device)
 
         
-        logits, pred_logp, pred_qed, pred_sas = model(b_ids,  pad_indx = 1)
+        logits, pred_logp, pred_qed, pred_sas, hidden_state = model(b_ids,  pad_indx = 1)
 
         
 
@@ -315,7 +315,7 @@ def train(args, config):
             b_sas = b_sas.to(device)
 
             optimizer.zero_grad()
-            logits, pred_logp, pred_qed, pred_sas = model(b_ids, pad_indx = 1)
+            logits, pred_logp, pred_qed, pred_sas, hidden_state = model(b_ids, pad_indx = 1)
 
 
             ce_loss = F.cross_entropy(logits.permute(0, 2, 1), b_ids, reduction='sum') / args.batch_size
