@@ -34,7 +34,7 @@ To train and run inference on ChemMolformer model using Zinc-250k dataset:
 python train.py
 
 python eval.py
-
+```
 
 To train and run inference on BioMolformer model using integrated dataset:
 
@@ -42,5 +42,5 @@ To train and run inference on BioMolformer model using integrated dataset:
 python bio_train.py
 
 python bio_eval.py
-
+```
 
