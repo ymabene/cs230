@@ -1,10 +1,12 @@
 **Repository for the Molformer Model**
 
+Molformer model is within the folder called **model**
+
 Molformer model using chemical property data is found in **molformer.py**
 
 Molformer model using chemical property data and biological data is found in **biomolformer.py**
 
-Training and evaluation scripts are in the following files:
+Training and inference scripts are in the following files:
 
 **train.py**
 
@@ -18,17 +20,27 @@ Training and evaluation scripts are in the following files:
 
 **finetune_script.py**
 
-Data processing scripts are in the following files:
-
-**bio_data_processing.ipynb**
-
-**biological_data_preprocessing.py**
-
-**zinc.py**
+Data processing scripts are in the folder called **data_processing**
 
 
-Inference for baseline Molformer model is found in **inference.ipynb**
+Evaluation scripts are found in the folder called **evaluation**
 
-**gene_drug_chembl_ids.py**
+Data is found in the folder called **data**
 
-**generate_sample_data.py**
+
+To train and run inference on ChemMolformer model using Zinc-250k dataset:
+
+```bash
+python train.py
+
+python eval.py
+
+
+To train and run inference on BioMolformer model using integrated dataset:
+
+```bash
+python bio_train.py
+
+python bio_eval.py
+
+
