@@ -26,12 +26,6 @@ import os
 ## This file trains the Molformer Model
 
 
-## Load and tokenize data
-
-## Vocab size: 767
-## Start token: 0
-## End token: 2
-## Pad token: 1
 
 
 """
