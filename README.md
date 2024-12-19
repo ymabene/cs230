@@ -1,5 +1,7 @@
 **Repository for the Molformer Model**
 
+This is the repository for the Molformer models. Molformer is a transformer based model trained on chemical and biological data to generate representations of small molecules.
+
 Molformer model is within the folder called **model**
 
 Molformer model using chemical property data is found in **molformer.py**
