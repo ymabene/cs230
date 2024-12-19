@@ -26,7 +26,7 @@ The repository is organized as the following:
 
 
 
-Molformer model is located within the folder called **model**
+Molformer models are located within the folder called **model**
 
 Molformer model using chemical property data is found in **molformer.py**
 
