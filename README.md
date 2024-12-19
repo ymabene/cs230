@@ -9,11 +9,22 @@ genetic mutations, gene expression, and pathway information.
 
 ![Alt text](images/data_processing_pipeline.png)
 
-We utilize classification heads during training to enable chemical and biological property prediction.
+We utilize classification heads during training to enable chemical and biological property prediction. 
+For our baseline model, we use the Zinc-250k dataset which consists of 250,000 small drug-like
+molecules and their SMILES (molecular structure) representation. This dataset
+also includes the LogP, QED, and SAS values for each molecule.
+
+To generate our multimodal biological dataset, we develop a reproducible pipeline that extracts and
+processes mutation, gene expression, tumor sample, and patient data from multiple data files from the
+TCGA PanCancerAtlas Breast Invasive Carcinoma study.  We focus on three key driver genes PIK3CA, TP53,
+and MAP3K1. 
 
 ![Alt text](images/architecture.jpg)
 
+
 The repository is organized as the following:
+
+
 
 Molformer model is located within the folder called **model**
 
