@@ -19,7 +19,7 @@ processes mutation, gene expression, tumor sample, and patient data from multipl
 TCGA PanCancerAtlas Breast Invasive Carcinoma study.  We focus on three key driver genes PIK3CA, TP53,
 and MAP3K1. 
 
-![Alt text](images/architecture.jpg)
+![Alt text](images/architecture.png)
 
 
 The repository is organized as the following:
