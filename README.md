@@ -7,7 +7,7 @@ struct a transformer model, Molformer, that can generate molecular representatio
 that are optimized for both chemical properties and biological data, including
 genetic mutations, gene expression, and pathway information.
 
-![Alt text](images/data_processing_pipeline.jpg)
+![Alt text](images/data_processing_pipeline.png)
 
 
 Molformer model is within the folder called **model**
