@@ -1,6 +1,14 @@
 **Repository for the Molformer Model**
 
-This is the repository for the Molformer models. Molformer is a transformer based model trained on chemical and biological data to generate representations of small molecules.
+Current Drug Design models focus heavily on the chemical structure of drug and
+target molecules, often leaving out the biological context crucial to target the highly
+specific genetic and molecular landscape of cancer. To address this, we con-
+struct a transformer model, Molformer, that can generate molecular representations
+that are optimized for both chemical properties and biological data, including
+genetic mutations, gene expression, and pathway information.
+
+![Alt text](images/data_processing_pipeline.jpg)
+
 
 Molformer model is within the folder called **model**
 
