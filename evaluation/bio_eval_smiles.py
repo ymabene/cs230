@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 from finetune_script import *
 
-# Using CS224N final project config as reference
+# Script for evaluating BIOMolformer model
 
 
 

@@ -24,6 +24,7 @@ from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 
 
+## Script to generate perturbations in BioMolformer latent space
 
 config = SimpleNamespace(
     lr=1e-3,

@@ -5,13 +5,12 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 
 
-
-
 from tqdm import tqdm
 
 from pretraining_scripts import *
 
 
+# This script evaluates the Molformer Model
 
 
 def get_args():

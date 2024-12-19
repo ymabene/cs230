@@ -24,6 +24,8 @@ import matplotlib.pyplot as plt
 
 
 
+## Script to generatre TSNE visualization of Molformer embeddings
+
 config = SimpleNamespace(
     lr=1e-3,
     use_gpu=False,

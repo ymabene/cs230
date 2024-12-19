@@ -23,7 +23,7 @@ from biomolformer import *
 import os
 
 
-
+## This file includes training (finetuning) scripts for BIOMolformer model
 
 
 ## Load and tokenize data
@@ -33,6 +33,15 @@ import os
 ## End token: 2
 ## Pad token: 1
 
+
+"""
+Dataset class for SMILES molecular data
+
+Parameters:
+csv_file: Path to data
+tokenizer_name: SMILES tokenizer
+max_length: Maximum sequence length
+"""
 class SmilesDataset(Dataset):
     def __init__(self, csv_file, tokenizer_name='seyonec/ChemBERTa-zinc-base-v1', max_length=80):
         self.data = pd.read_csv(csv_file)
@@ -92,9 +101,17 @@ class SmilesDataset(Dataset):
 
 
 
+"""
+Saves trained model.
 
+Parameters:
+model: Model to save
+optimizer: Optimizer used during training
+args: Arguments
+config: Model Configurations
+filepath: Path to save model
+"""
 def save_model(model, optimizer, args, config, filepath):
-    # Taken from CS224N Project spec
     save_info = {
         'model': model.state_dict(),
         'optim': optimizer.state_dict(),
@@ -109,7 +126,14 @@ def save_model(model, optimizer, args, config, filepath):
     print(f"save the model to {filepath}")
 
 
+"""
+Loads model for inference or further training.
 
+Parameters:
+model: Model to load
+optimizer: Optimizer used for training model
+filepath: Path where model is read from
+"""
 def load_model(model, optimizer, filepath):
     
     checkpoint = torch.load(filepath)
@@ -122,7 +146,15 @@ def load_model(model, optimizer, filepath):
  
 
 
+"""
+Computes validation loss of model during training.
 
+Parameters:
+dataloader: Validation dataloader
+model: Backbone model used during training
+bio_model: Model with classification heads for biological data
+args: Training arguments
+"""
 def model_evaluate_bio(dataloader, model,bio_model, device, args):
     model.eval() 
     bio_model.eval()
@@ -215,7 +247,13 @@ def model_evaluate_bio(dataloader, model,bio_model, device, args):
 
 
 
+"""
+Evaluates model during training and stores loss values and predicted values from model into a csv file.
 
+Parameters:
+args: Model arguments
+config: Model configurations
+"""
 def evaluate(args, config):
     device = torch.device('cuda') if args.use_gpu else torch.device('cpu')
     print("Args:", args.use_gpu)
@@ -343,7 +381,13 @@ def evaluate(args, config):
 
 
 
+"""
+Trains model and stores loss values and predicted values from model into a csv file.
 
+Parameters:
+args: Model arguments
+config: Model configurations
+"""
 def train(args, config):
     device = torch.device('cuda') if args.use_gpu else torch.device('cpu')
     print("Args:", args.use_gpu)
