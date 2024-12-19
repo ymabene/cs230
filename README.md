@@ -2,15 +2,20 @@
 
 Current Drug Design models focus heavily on the chemical structure of drug and
 target molecules, often leaving out the biological context crucial to target the highly
-specific genetic and molecular landscape of cancer. To address this, we con-
-struct a transformer model, Molformer, that can generate molecular representations
-that are optimized for both chemical properties and biological data, including
+specific genetic and molecular landscape of cancer. To address this, we construct
+a transformer model, Molformer, that can generate molecular representations
+that are optimized for both chemical properties and biological data, including 
 genetic mutations, gene expression, and pathway information.
 
 ![Alt text](images/data_processing_pipeline.png)
 
+We utilize classification heads during training to enable chemical and biological property prediction.
 
-Molformer model is within the folder called **model**
+![Alt text](images/architecture.jpg)
+
+The repository is organized as the following:
+
+Molformer model is located within the folder called **model**
 
 Molformer model using chemical property data is found in **molformer.py**
 
